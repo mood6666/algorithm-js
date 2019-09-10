@@ -42,15 +42,22 @@ class PriorityQueue {
 
 var queue = new PriorityQueue();
 
-queue.enqueue('a', 1);
-queue.enqueue('b', 2);
-queue.enqueue('c', 2);
-queue.enqueue('d', 2);
-queue.enqueue('e', 1);
-queue.print();
-queue.dequeue();
-queue.print();
-
+// queue.enqueue('a', 1);
+// queue.enqueue('b', 2);
+// queue.enqueue('c', 2);
+// queue.enqueue('d', 2);
+// queue.enqueue('e', 1);
+// queue.print();
+// queue.dequeue();
+// queue.print();
+console.time('queue')
+for(var i = 0; i < 100000; i++) {
+    queue.enqueue(i, i);
+}
+for(var i = 0; i < 100000; i++) {
+    queue.dequeue();
+}
+console.timeEnd('queue')
 
 
 
